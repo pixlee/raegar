@@ -1,13 +1,14 @@
 
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { history } from 'react-router-dom'
+import { withRouter } from 'react-router-dom'
 import { handleSetCurrentLink } from '../actions/navigation'
 
 class Navbar extends Component {
     handleNavigation(e, link) {
         e.preventDefault()
         this.props.dispatch(handleSetCurrentLink(link))
+        this.props.history.push(link);
     }
     render() {
         let { currentLink } = this.props
@@ -64,4 +65,4 @@ function mapStateToProps({ navigation }) {
     }
 }
 
-export default connect(mapStateToProps)(Navbar)
+export default withRouter(connect(mapStateToProps)(Navbar))
