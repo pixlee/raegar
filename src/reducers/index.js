@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux'
-import navigation from './navigation'
+import currentSection from './navigation'
 
 export default combineReducers({
-  navigation,
+  currentSection,
 })

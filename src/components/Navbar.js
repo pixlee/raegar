@@ -2,20 +2,16 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
-import { handleSetCurrentLink } from '../actions/navigation'
+import { handleSetcurrentSection } from '../actions/navigation'
 
 class Navbar extends Component {
     handleNavigation(e, link) {
         e.preventDefault()
-        this.props.dispatch(handleSetCurrentLink(link))
+        this.props.dispatch(handleSetcurrentSection(link))
         this.props.history.push(link);
     }
     render() {
-        let { currentLink } = this.props
-
-        if(!currentLink) {
-            currentLink = 'display-info'
-        }
+        let { currentSection } = this.props
 
         return (
             <ul className='navbar'>
@@ -24,31 +20,31 @@ class Navbar extends Component {
                         <i className="fal fa-times"></i>
                     </button>
                 </li>
-                <li className={ currentLink === 'display-info' ? 'active' : '' }>
+                <li className={ currentSection === 'Display Info' ? 'active' : '' }>
                     <div onClick={(e) => this.handleNavigation(e, 'display-info')}>
                         <i className="far fa-image"></i>
                         <span>Display Info</span>
                     </div>
                 </li>
-                <li className={ currentLink === 'customize-widget' ? 'active' : '' }>
+                <li className={ currentSection === 'Customize Widget' ? 'active' : '' }>
                     <div onClick={(e) => this.handleNavigation(e, 'customize-widget')}>
                         <i className="far fa-tools"></i>
                         <span>Customize Widget</span>
                     </div>
                 </li>
-                <li className={ currentLink === 'design-editor' ? 'active' : '' }>
+                <li className={ currentSection === 'Design Editor' ? 'active' : '' }>
                     <div onClick={(e) => this.handleNavigation(e, 'design-editor')}>
                         <i className="far fa-palette"></i>
                         <span>Design Editor</span>
                     </div>
                 </li>
-                <li className={ currentLink === 'display-settings' ? 'active' : '' }>
+                <li className={ currentSection === 'Display Settings' ? 'active' : '' }>
                     <div onClick={(e) => this.handleNavigation(e, 'display-settings')}>
                         <i className="far fa-cogs"></i>
                         <span>Display Settings</span>
                     </div>
                 </li>
-                <li className={ currentLink === 'advanced-options' ? 'active' : '' }>
+                <li className={ currentSection === 'Advanced Options' ? 'active' : '' }>
                     <div onClick={(e) => this.handleNavigation(e, 'advanced-options')}>
                         <i className="fas fa-graduation-cap"></i>
                         <span>Advanced Options</span>
@@ -59,9 +55,9 @@ class Navbar extends Component {
     }
 }
 
-function mapStateToProps({ navigation }) {
+function mapStateToProps({ currentSection }) {
     return {
-        currentLink: navigation.currentLink
+        currentSection
     }
 }
 

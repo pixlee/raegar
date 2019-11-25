@@ -3,8 +3,12 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import Navbar from './Navbar'
 import Sidebar from './Sidebar'
+import { handleSetcurrentSection } from '../actions/navigation'
 
 class DisplaySettings extends Component {
+    componentDidMount() {
+        this.props.dispatch(handleSetcurrentSection('display-settings'))
+    }
     render() {
         return (
             <section className='display_info'>
@@ -15,4 +19,10 @@ class DisplaySettings extends Component {
     }
 }
 
-export default connect()(DisplaySettings)
+function mapStateToProps({ currentSection }) {
+    return {
+        currentSection
+    }
+}
+
+export default connect(mapStateToProps)(DisplaySettings)

@@ -3,16 +3,26 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import Navbar from './Navbar'
 import Sidebar from './Sidebar'
+import { handleSetcurrentSection } from '../actions/navigation'
 
 class CustomizeWidget extends Component {
+    componentDidMount() {
+        this.props.dispatch(handleSetcurrentSection('customize-widget'))
+    }
     render() {
         return (
             <section className='display_info'>
-                <Navbar currentLink='customize_widget' />
+                <Navbar />
                 <Sidebar />
             </section>
         )
     }
 }
 
-export default connect()(CustomizeWidget)
+function mapStateToProps({ currentSection }) {
+    return {
+        currentSection
+    }
+}
+
+export default connect(mapStateToProps)(CustomizeWidget)

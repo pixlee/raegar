@@ -5,10 +5,12 @@ import { connect } from 'react-redux'
 
 class Sidebar extends Component {
     render() {
+        let { currentSection } = this.props
+
         return (
             <section className='sidebar'>
                 <div className='section_title'>
-                    <h5>Section Title</h5>
+                    <h5>{ currentSection }</h5>
                 </div>
                 <div className='section_content'>
                 </div>
@@ -19,4 +21,11 @@ class Sidebar extends Component {
     }
 }
 
-export default connect()(Sidebar)
+function mapStateToProps({ currentSection }) {
+    console.log(currentSection)
+    return {
+        currentSection
+    }
+}
+
+export default connect(mapStateToProps)(Sidebar)

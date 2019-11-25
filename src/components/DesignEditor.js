@@ -3,8 +3,12 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import Navbar from './Navbar'
 import Sidebar from './Sidebar'
+import { handleSetcurrentSection } from '../actions/navigation'
 
 class DesignEditor extends Component {
+    componentDidMount() {
+        this.props.dispatch(handleSetcurrentSection('design-editor'))
+    }
     render() {
         return (
             <section className='display_info'>
@@ -15,4 +19,10 @@ class DesignEditor extends Component {
     }
 }
 
-export default connect()(DesignEditor)
+function mapStateToProps({ currentSection }) {
+    return {
+        currentSection
+    }
+}
+
+export default connect(mapStateToProps)(DesignEditor)

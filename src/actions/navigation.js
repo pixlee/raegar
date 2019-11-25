@@ -1,13 +1,13 @@
 
-export const SET_CURRENT_LINK = 'SET_CURRENT_LINK'
+export const SET_CURRENT_SECTION = 'SET_CURRENT_SECTION'
 
-export function setCurrentLink(link) {
+export function setcurrentSection(section) {
     return {
-        type: SET_CURRENT_LINK,
-        link
+        type: SET_CURRENT_SECTION,
+        section
     }
 }
 
-export function handleSetCurrentLink(link) {
-    return setCurrentLink(link)
+export function handleSetcurrentSection(section) {
+    return setcurrentSection(section)
 }
