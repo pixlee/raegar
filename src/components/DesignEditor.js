@@ -5,15 +5,15 @@ import { Redirect } from 'react-router-dom'
 import Navbar from './Navbar'
 import Sidebar from './Sidebar'
 
-class PublishLightbox extends Component {
+class DesignEditor extends Component {
     render() {
         return (
-            <section className='publish_lightbox'>
-                <Navbar />
+            <section className='display_info'>
+                <Navbar currentLink='design_editor' />
                 <Sidebar />
             </section>
         )
     }
 }
 
-export default connect()(PublishLightbox)
+export default connect()(DesignEditor)

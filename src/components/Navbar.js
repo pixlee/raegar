@@ -5,40 +5,42 @@ import { Link } from 'react-router-dom'
 
 class Navbar extends Component {
     render() {
+        const { currentLink } = this.props
+
         return (
             <ul className='navbar'>
                 <li>
                     <button className='close_btn'>
-                        <i class="fal fa-times"></i>
+                        <i className="fal fa-times"></i>
                     </button>
                 </li>
-                <li>
+                <li className={ currentLink === 'display_info' ? 'active' : '' }>
                     <Link to='/'>
-                        <i class="far fa-image"></i>
+                        <i className="far fa-image"></i>
                         <span>Display Info</span>
                     </Link>
                 </li>
-                <li>
-                    <Link to='/'>
-                        <i class="far fa-tools"></i>
+                <li className={ currentLink === 'customize_widget' ? 'active' : '' }>
+                    <Link to='/customize-widget'>
+                        <i className="far fa-tools"></i>
                         <span>Customize Widget</span>
                     </Link>
                 </li>
-                <li>
-                    <Link to='/'>
-                        <i class="far fa-palette"></i>
+                <li className={ currentLink === 'design_editor' ? 'active' : '' }>
+                    <Link to='/design-editor'>
+                        <i className="far fa-palette"></i>
                         <span>Design Editor</span>
                     </Link>
                 </li>
-                <li>
-                    <Link to='/'>
-                        <i class="far fa-cogs"></i>
+                <li className={ currentLink === 'display_settings' ? 'active' : '' }>
+                    <Link to='/display-settings'>
+                        <i className="far fa-cogs"></i>
                         <span>Display Settings</span>
                     </Link>
                 </li>
-                <li>
-                    <Link to='/'>
-                        <i class="fas fa-graduation-cap"></i>
+                <li className={ currentLink === 'advanced_options' ? 'active' : '' }>
+                    <Link to='/advanced-options'>
+                        <i className="fas fa-graduation-cap"></i>
                         <span>Advanced Options</span>
                     </Link>
                 </li>
