@@ -4,9 +4,39 @@
     background: @slate7;
     margin: 0;
 
-
     a {
         color: white;
         text-decoration: none;
+    }
+
+    li {
+        text-align: center;
+        margin: 0;
+        padding: 20px 15px;
+
+        &:first-child {
+            padding: 0;
+        }
+
+        &:hover {            
+            background: @purple;
+        }
+
+        span {
+            display: block;
+            font-size: 14px;
+            max-width: 70px;
+        }
+    }
+
+    .close_btn {
+        background: @slate3;
+        border: none;
+        border-radius: 0;
+        color: white;
+        font-size: 32px;
+        margin: 0;
+        height: 80px;
+        width: 100%;
     }
 }

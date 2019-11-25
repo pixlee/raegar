@@ -8,13 +8,39 @@ class Navbar extends Component {
         return (
             <ul className='navbar'>
                 <li>
-                    <Link to='/'>Home</Link>
+                    <button className='close_btn'>
+                        <i class="fal fa-times"></i>
+                    </button>
                 </li>
                 <li>
-                    <Link to='/'>Leaderboard</Link>
+                    <Link to='/'>
+                        <i class="far fa-image"></i>
+                        <span>Display Info</span>
+                    </Link>
                 </li>
                 <li>
-                    <Link to='/'>New Poll</Link>
+                    <Link to='/'>
+                        <i class="far fa-tools"></i>
+                        <span>Customize Widget</span>
+                    </Link>
+                </li>
+                <li>
+                    <Link to='/'>
+                        <i class="far fa-palette"></i>
+                        <span>Design Editor</span>
+                    </Link>
+                </li>
+                <li>
+                    <Link to='/'>
+                        <i class="far fa-cogs"></i>
+                        <span>Display Settings</span>
+                    </Link>
+                </li>
+                <li>
+                    <Link to='/'>
+                        <i class="fas fa-graduation-cap"></i>
+                        <span>Advanced Options</span>
+                    </Link>
                 </li>
             </ul>
         )
