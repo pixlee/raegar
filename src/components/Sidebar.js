@@ -18,7 +18,10 @@ class Sidebar extends Component {
                         <DisplayInfoContent />
                     )}
                 </div>
-                <div className='section_controls'>
+                <div className='section_controls disabled'>
+                    <button className='create_btn'>Create</button>
+                    <button className='reset_btn'>Reset</button>
+                    <button className='preview_btn'>Preview</button>
                 </div>
             </section>
         )

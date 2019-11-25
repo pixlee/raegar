@@ -31,11 +31,6 @@
         color: @slate3;
         padding: 20px 20px 25px;
 
-        &.disabled {
-            opacity: 0.4;
-            pointer-events: none;
-        }
-
         label {
             color: @slate3;
             font-family: sofia_medium;
@@ -71,6 +66,37 @@
 
         p {
             margin: 0;
+        }
+    }
+
+    .section_content {
+        flex-grow: 1;
+    }
+
+    .section_controls {
+        background: lighten(@slate1, 4);
+        border-top: 1px solid @slate1;
+        display: flex;
+        justify-content: space-around;
+        padding: 20px 15px;
+
+        button {
+            border: 1px solid @slate2;
+            margin: 0;
+            padding: 0;
+            width: 100px;
+
+            &.create_btn {
+                background: @blue;
+                border: none;
+                color: white;
+            }
+
+            &.reset_btn {
+                background: @slate5;
+                border: none;
+                color: white;
+            }
         }
     }
 }
