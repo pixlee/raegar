@@ -6,7 +6,7 @@ export default function navigation(state = {}, action) {
         case SET_CURRENT_LINK:
             return {
                 ...state,
-                ...action.link
+                currentLink: action.link
             }
         default:
             return state;
