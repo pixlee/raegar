@@ -12,7 +12,7 @@ class DisplayInfo extends Component {
     render() {
         return (
             <section className='display_info'>
-                <Navbar currentLink='display_info' />
+                <Navbar />
                 <Sidebar />
             </section>
         )

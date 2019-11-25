@@ -1,6 +1,7 @@
 
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import DisplayInfoContent from './DisplayInfoContent'
 // import { Link } from 'react-router-dom'
 
 class Sidebar extends Component {
@@ -13,6 +14,9 @@ class Sidebar extends Component {
                     <h5>{ currentSection }</h5>
                 </div>
                 <div className='section_content'>
+                    { currentSection === 'Display Info' && (
+                        <DisplayInfoContent />
+                    )}
                 </div>
                 <div className='section_controls'>
                 </div>
