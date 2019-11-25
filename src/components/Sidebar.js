@@ -29,7 +29,6 @@ class Sidebar extends Component {
 }
 
 function mapStateToProps({ currentSection }) {
-    console.log(currentSection)
     return {
         currentSection
     }
