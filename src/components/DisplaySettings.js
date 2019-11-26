@@ -3,11 +3,11 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import Navbar from './Navbar'
 import Sidebar from './Sidebar'
-import { handleSetcurrentSection } from '../actions/navigation'
+import { handleSetCurrentSection } from '../actions/shared'
 
 class DisplaySettings extends Component {
     componentDidMount() {
-        this.props.dispatch(handleSetcurrentSection('display-settings'))
+        this.props.dispatch(handleSetCurrentSection('display-settings'))
     }
     render() {
         return (

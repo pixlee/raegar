@@ -3,11 +3,11 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import Navbar from './Navbar'
 import Sidebar from './Sidebar'
-import { handleSetcurrentSection } from '../actions/navigation'
+import { handleSetCurrentSection } from '../actions/shared'
 
 class CustomizeWidget extends Component {
     componentDidMount() {
-        this.props.dispatch(handleSetcurrentSection('customize-widget'))
+        this.props.dispatch(handleSetCurrentSection('customize-widget'))
     }
     render() {
         return (

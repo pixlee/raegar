@@ -1,5 +1,5 @@
 
-import { SET_CURRENT_SECTION } from '../actions/navigation'
+import { SET_CURRENT_SECTION } from '../actions/shared'
 
 export default function currentSection(state = null, action) {
     switch(action.type) {

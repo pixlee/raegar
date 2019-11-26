@@ -4,11 +4,11 @@ import { connect } from 'react-redux'
 import Navbar from './Navbar'
 import Sidebar from './Sidebar'
 import ContentBox from './ContentBox'
-import { handleSetcurrentSection } from '../actions/navigation'
+import { handleSetCurrentSection } from '../actions/shared'
 
 class DisplayInfo extends Component {
     componentDidMount() {
-        this.props.dispatch(handleSetcurrentSection('display-info'))
+        this.props.dispatch(handleSetCurrentSection('display-info'))
     }
     render() {
         return (

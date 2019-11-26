@@ -3,11 +3,11 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import Navbar from './Navbar'
 import Sidebar from './Sidebar'
-import { handleSetcurrentSection } from '../actions/navigation'
+import { handleSetCurrentSection } from '../actions/shared'
 
 class AdvancedOptions extends Component {
     componentDidMount() {
-        this.props.dispatch(handleSetcurrentSection('advanced-options'))
+        this.props.dispatch(handleSetCurrentSection('advanced-options'))
     }
     render() {
         return (

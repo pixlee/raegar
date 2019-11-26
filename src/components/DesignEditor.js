@@ -3,11 +3,11 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import Navbar from './Navbar'
 import Sidebar from './Sidebar'
-import { handleSetcurrentSection } from '../actions/navigation'
+import { handleSetCurrentSection } from '../actions/shared'
 
 class DesignEditor extends Component {
     componentDidMount() {
-        this.props.dispatch(handleSetcurrentSection('design-editor'))
+        this.props.dispatch(handleSetCurrentSection('design-editor'))
     }
     render() {
         return (

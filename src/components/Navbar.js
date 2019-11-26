@@ -2,12 +2,12 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
-import { handleSetcurrentSection } from '../actions/navigation'
+import { handleSetCurrentSection } from '../actions/shared'
 
 class Navbar extends Component {
     handleNavigation(e, link) {
         e.preventDefault()
-        this.props.dispatch(handleSetcurrentSection(link))
+        this.props.dispatch(handleSetCurrentSection(link))
         this.props.history.push(link);
     }
     getClassNames(section) {
