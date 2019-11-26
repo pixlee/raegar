@@ -1,8 +1,28 @@
 
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import { handleGetAlbum } from '../actions/widget'
+import { getAlbum } from '../data/albums'
 
 class DisplayInfoContent extends Component {
+    state = {
+        showAlbumList: false
+    }
+    showAlbumList(e) {
+        e.preventDefault()
+
+        this.setState({
+            showAlbumList: !this.state.showAlbumList
+        })
+    }
+    loadAlbum(e, albumId) {
+        e.preventDefault()
+        this.props.dispatch(handleGetAlbum(getAlbum(albumId)))
+
+        this.setState({
+            showAlbumList: !this.state.showAlbumList
+        })
+    }
     render() {
         return (
             <div className='container'>
@@ -12,9 +32,18 @@ class DisplayInfoContent extends Component {
                 </div>
                 <div className='section'>
                     <label className='required'>Albums</label>
-                    <ul className='select'>
-                        <li className='option'>Select an album</li>
-                    </ul>
+                    <div className='select' onClick={(e) => this.showAlbumList(e)}>
+                        <span>Select an album</span>
+
+                        { this.state.showAlbumList && (
+                            <ul className='options'>
+                                <li onClick={(e) => this.loadAlbum(e, 1659473)}>Fashion & Clothes</li>
+                                <li>Canadian Influencers</li>
+                                <li>Nature and Wilderness</li>
+                                <li>Canadian Influencers</li>
+                            </ul>
+                        )}
+                    </div>
                 </div>
                 <div className='section disabled'>
                     <label className='required'>Filters</label>

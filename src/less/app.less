@@ -40,6 +40,7 @@ h1, h2, h3, h4, h5 {
     margin: 0;
     padding: 6px 15px 8px;
     position: relative;
+    z-index: 100;
 
     &:after {
         content: '\f078';
@@ -52,8 +53,29 @@ h1, h2, h3, h4, h5 {
         right: 15px;
     }
 
-    .option {
-        margin: 0;
+    .options {
+        background: @slate5;
+        border: 1px solid @slate6;
+        border-radius: 5px;
+        color: white;
+        position: absolute;
+        top: 120%;
+        left: 0;
+        width: 100%;
+
+        li {
+            border-bottom: 1px solid @slate6;
+            margin: 0;
+            padding: 8px 15px 10px;
+
+            &:last-child {
+                border: none;
+            }
+
+            &:hover {
+                background: @slate4;
+            }
+        }
     }
 }
 
