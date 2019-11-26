@@ -54,7 +54,7 @@ class ContentBox extends Component {
                             </div>
 
                             { !loading && photos && (
-                                <ul className='gallery'>
+                                <ul className='gallery photowall'>
                                     { photos.map((photo) => {
                                         return <li key={photo.id}>
                                             <PhotoItem photo={photo} />

@@ -28,15 +28,15 @@ let travel_life = {
     },
     {
       "id": 2,
-      "url": "https://images.unsplash.com/photo-1493799228497-1c99e413459b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=900&q=60"
-    },
-    {
-      "id": 3,
       "url": "https://images.unsplash.com/photo-1574008335360-4685d6ec9fe1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=900&q=60"
     },
     {
+      "id": 3,
+      "url": "https://images.unsplash.com/photo-1574170240473-5733a5b43a3c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=900&q=60"
+    },
+    {
       "id": 4,
-      "url": "https://images.unsplash.com/photo-1574259147943-4c965bc1efbe?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=900&q=60"
+      "url": "https://images.unsplash.com/photo-1482192505345-5655af888cc4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=900&q=60"
     },
     {
       "id": 5,
@@ -52,7 +52,7 @@ let travel_life = {
     },
     {
       "id": 8,
-      "url": "https://images.unsplash.com/photo-1574170240473-5733a5b43a3c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=900&q=60"
+      "url": "https://images.unsplash.com/photo-1493799228497-1c99e413459b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=900&q=60"
     },
     {
       "id": 9,
@@ -85,6 +85,10 @@ let travel_life = {
     {
       "id": 16,
       "url": "https://images.unsplash.com/photo-1572023460159-666b508e6580?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=900&q=60"
+    },
+    {
+      "id": 17,
+      "url": "https://images.unsplash.com/photo-1501854140801-50d01698950b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=900&q=60"
     },
   ],
   "message": "Successfully returned album photos",
@@ -164,6 +168,10 @@ let fashion_and_clothes = {
     {
       "id": 16,
       "url": "https://images.unsplash.com/photo-1456885284447-7dd4bb8720bf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=900&q=60"
+    },
+    {
+      "id": 17,
+      "url": "https://images.unsplash.com/photo-1465408953385-7c4627c29435?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=900&q=60"
     },
   ],
   "message": "Successfully returned album photos",
