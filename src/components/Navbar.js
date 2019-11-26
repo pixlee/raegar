@@ -18,7 +18,7 @@ class Navbar extends Component {
             classNames += 'active'
         }
 
-        if(section !== 'Display Info' && !album.data) {
+        if(section !== 'Display Info' && !album) {
             classNames += ' disabled'
         }
 

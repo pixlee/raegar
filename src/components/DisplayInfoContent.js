@@ -79,7 +79,7 @@ class DisplayInfoContent extends Component {
                                 <li onClick={(e) => this.loadAlbum(e, 'Fashion & Clothes')}>Fashion & Clothes</li>
                                 <li onClick={(e) => this.loadAlbum(e, 'Travel Life')}>Travel Life</li>
                                 <li>Nature and Wilderness</li>
-                                <li>Food and Drinks</li>
+                                <li onClick={(e) => this.loadAlbum(e, 'Food and Drinks')}>Food and Drinks</li>
                             </ul>
                         )}
                     </div>
@@ -125,7 +125,7 @@ class DisplayInfoContent extends Component {
 function mapStateToProps({ currentSection, album, filter }) {
     return {
         currentSection,
-        albumSelected: album.name,
+        albumSelected: album ? album.name : null,
         filterSelected: filter
     }
 }

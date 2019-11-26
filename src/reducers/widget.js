@@ -1,7 +1,7 @@
 
 import { GET_ALBUM, FILTER_ALBUM } from '../actions/widget'
 
-export function album(state = {}, action) {
+export function album(state = null, action) {
     switch(action.type) {
         case GET_ALBUM:
             return {

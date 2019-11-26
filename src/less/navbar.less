@@ -3,25 +3,33 @@
 .navbar {
     background: @slate7;
     margin: 0;
+    width: 100px;
 
     li {
         color: white;
         cursor: pointer;
         text-align: center;
         margin: 0;
-        padding: 20px 15px;
+        padding: 20px 18px;
 
         &:first-child {
             padding: 0;
         }
 
-        &:hover,
         &.active {            
             background: @purple;
+
+            &:hover {
+                color: white;
+            }
+        }
+
+        &:hover {            
+            color: @purple;
         }
 
         i {
-            font-size: 18px;
+            font-size: 16px;
             margin-bottom: 8px;
         }
 
