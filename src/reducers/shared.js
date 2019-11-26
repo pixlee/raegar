@@ -1,7 +1,7 @@
 
-import { SET_CURRENT_SECTION } from '../actions/shared'
+import { SET_CURRENT_SECTION, FETCHING_DATA } from '../actions/shared'
 
-export default function currentSection(state = null, action) {
+export function currentSection(state = null, action) {
     switch(action.type) {
         case SET_CURRENT_SECTION:
             let currentSection = 'Display Info'
@@ -27,5 +27,13 @@ export default function currentSection(state = null, action) {
             return currentSection
         default:
             return state;
+    }
+}
+
+export function fetchingData(state = false, action) {
+    if(action.type === FETCHING_DATA) {
+        return action.fetching
+    } else {
+        return state
     }
 }

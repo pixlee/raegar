@@ -2,10 +2,11 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import PhotoItem from './PhotoItem'
+import LoadingGalleryView from './LoadingGalleryView'
 
 class ContentBox extends Component {
     render() {
-        const { photos } = this.props
+        const { fetchingData, photos } = this.props
 
         return (
             <section className='content_box'>
@@ -46,13 +47,19 @@ class ContentBox extends Component {
                                     <span>Add Your Photo</span>
                                 </button>
                             </div>
-                            <ul className='gallery'>
-                                { photos.map((photo) => {
-                                    return <li key={photo.id}>
-                                        <PhotoItem photo={photo} />
-                                    </li>
-                                })}
-                            </ul>
+                            { !fetchingData && (
+                                <ul className='gallery'>
+                                    { photos.map((photo) => {
+                                        return <li key={photo.id}>
+                                            <PhotoItem photo={photo} />
+                                        </li>
+                                    })}
+                                </ul>
+                            )}
+
+                            { fetchingData && (
+                                <LoadingGalleryView />
+                            )}
                         </div>
                     )}
                 </div>
@@ -61,9 +68,10 @@ class ContentBox extends Component {
     }
 }
 
-function mapStateToProps({ album }) {
+function mapStateToProps({ fetchingData, album }) {
     return {
-        photos: album.data
+        photos: album.data,
+        fetchingData
     }
 }
 

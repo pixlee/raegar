@@ -2,6 +2,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { handleGetAlbum } from '../actions/widget'
+import { handleSetFetchingData } from '../actions/shared'
 import { getAlbum } from '../data/albums'
 
 class DisplayInfoContent extends Component {
@@ -18,7 +19,16 @@ class DisplayInfoContent extends Component {
     }
     loadAlbum(e, albumName) {
         e.preventDefault()
-        this.props.dispatch(handleGetAlbum(getAlbum(albumName)))
+
+        const { dispatch } = this.props
+
+        dispatch(handleSetFetchingData(true))
+        dispatch(handleGetAlbum(getAlbum(albumName)))
+
+        // fake a delay for "API" call
+        setTimeout(() => {
+          dispatch(handleSetFetchingData(false))
+        }, 1000)
 
         this.setState({
             showAlbumList: !this.state.showAlbumList,

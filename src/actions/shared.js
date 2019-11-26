@@ -21,5 +21,5 @@ function setFetchingData(fetching) {
 }
 
 export function handleSetFetchingData(fetching) {
-    return setCurrentSection(fetching)
+    return setFetchingData(fetching)
 }

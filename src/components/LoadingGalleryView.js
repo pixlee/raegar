@@ -6,22 +6,22 @@ class LoadingGalleryView extends Component {
     render() {
         return (
             <ul className='gallery loading'>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
+                <li className='shine'></li>
+                <li className='shine'></li>
+                <li className='shine'></li>
+                <li className='shine'></li>
+                <li className='shine'></li>
+                <li className='shine'></li>
+                <li className='shine'></li>
+                <li className='shine'></li>
+                <li className='shine'></li>
+                <li className='shine'></li>
+                <li className='shine'></li>
+                <li className='shine'></li>
+                <li className='shine'></li>
+                <li className='shine'></li>
+                <li className='shine'></li>
+                <li className='shine'></li>
             </ul>
         )
     }
