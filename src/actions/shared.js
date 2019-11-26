@@ -1,6 +1,6 @@
 
 export const SET_CURRENT_SECTION = 'SET_CURRENT_SECTION'
-export const FETCHING_DATA = 'FETCHING_DATA'
+export const LOADING = 'LOADING'
 
 function setCurrentSection(section) {
     return {
@@ -13,13 +13,13 @@ export function handleSetCurrentSection(section) {
     return setCurrentSection(section)
 }
 
-function setFetchingData(fetching) {
+function setLoading(loading) {
     return {
-        type: FETCHING_DATA,
-        fetching
+        type: LOADING,
+        loading
     }
 }
 
-export function handleSetFetchingData(fetching) {
-    return setFetchingData(fetching)
+export function handleSetLoading(loading) {
+    return setLoading(loading)
 }

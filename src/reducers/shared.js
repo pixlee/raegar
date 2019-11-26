@@ -1,5 +1,5 @@
 
-import { SET_CURRENT_SECTION, FETCHING_DATA } from '../actions/shared'
+import { SET_CURRENT_SECTION, LOADING } from '../actions/shared'
 
 export function currentSection(state = null, action) {
     switch(action.type) {
@@ -30,9 +30,9 @@ export function currentSection(state = null, action) {
     }
 }
 
-export function fetchingData(state = false, action) {
-    if(action.type === FETCHING_DATA) {
-        return action.fetching
+export function loading(state = false, action) {
+    if(action.type === LOADING) {
+        return action.loading
     } else {
         return state
     }

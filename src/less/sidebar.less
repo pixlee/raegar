@@ -32,9 +32,23 @@
         color: @slate3;
         padding: 12px 20px 18px;
 
+        &.name_of_display {
+            margin: 3px 0 0;
+        }
+
         &.albums_dropdown {
             position: relative;
-            z-index: 1000;
+            z-index: 1003;
+        }
+
+        &.filters {
+            position: relative;
+            z-index: 1002;
+        }
+
+        &.sort {
+            position: relative;
+            z-index: 1001;
         }
 
         label {
@@ -48,10 +62,6 @@
                 content: '*';
                 color: red;
                 margin-left: 2px;
-            }
-
-            &.name_of_display {
-                margin-bottom: 0;
             }
         }
 

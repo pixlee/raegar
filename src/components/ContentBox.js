@@ -6,7 +6,7 @@ import LoadingGalleryView from './LoadingGalleryView'
 
 class ContentBox extends Component {
     render() {
-        const { fetchingData, photos } = this.props
+        const { loading, photos } = this.props
 
         return (
             <section className='content_box'>
@@ -49,7 +49,7 @@ class ContentBox extends Component {
                                     <span>Add Your Photo</span>
                                 </button>
                             </div>
-                            { !fetchingData && (
+                            { !loading && (
                                 <ul className='gallery'>
                                     { photos.map((photo) => {
                                         return <li key={photo.id}>
@@ -59,7 +59,7 @@ class ContentBox extends Component {
                                 </ul>
                             )}
 
-                            { fetchingData && (
+                            { loading && (
                                 <LoadingGalleryView />
                             )}
                         </div>
@@ -70,10 +70,16 @@ class ContentBox extends Component {
     }
 }
 
-function mapStateToProps({ fetchingData, album }) {
+function mapStateToProps({ loading, album, filter }) {
+    let photos = album.data
+
+    if(filter === 'Permissioned Content') {
+        photos = album.data.filter((photo) => photo.id > 8)
+    }
+
     return {
-        photos: album.data,
-        fetchingData
+        photos: photos,
+        loading
     }
 }
 

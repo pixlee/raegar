@@ -1,9 +1,10 @@
 import { combineReducers } from 'redux'
-import { currentSection, fetchingData } from './shared'
-import album from './widget'
+import { currentSection, loading } from './shared'
+import { album, filter } from './widget'
 
 export default combineReducers({
-    fetchingData,
+    loading,
     currentSection,
-    album
+    album,
+    filter
 })
