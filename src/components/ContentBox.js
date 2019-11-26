@@ -10,24 +10,8 @@ class ContentBox extends Component {
 
         return (
             <section className='content_box'>
-                <div className='device_switcher'>
-                    <ul>
-                        <li className='active'>
-                            <i className="far fa-laptop"></i>
-                            <span>Web</span>
-                        </li>
-                        <li>
-                            <i className="far fa-tablet"></i>
-                            <span>Tablet</span>
-                        </li>
-                        <li>
-                            <i className="far fa-mobile"></i>
-                            <span>Mobile</span>
-                        </li>
-                    </ul>
-                </div>
-                <div className='widget_holder'>
-                    { !photos && (
+                { !photos && (
+                    <div className='widget_holder'>
                         <div className='empty widget'>
                             <div className='header'>
                                 <h4>Header goes here</h4>
@@ -36,9 +20,27 @@ class ContentBox extends Component {
                                 <h4>Photos goes here</h4>
                             </div>
                         </div>
-                    )}
+                    </div>
+                )}
 
-                    { photos && (
+                { photos && (                    
+                    <div className='widget_holder'>
+                        <div className='device_switcher'>
+                            <ul>
+                                <li className='active'>
+                                    <i className="far fa-laptop"></i>
+                                    <span>Web</span>
+                                </li>
+                                <li>
+                                    <i className="far fa-tablet"></i>
+                                    <span>Tablet</span>
+                                </li>
+                                <li>
+                                    <i className="far fa-mobile"></i>
+                                    <span>Mobile</span>
+                                </li>
+                            </ul>
+                        </div>
                         <div className='widget photowall'>
                             <div className='header'>
                                 <h4>Share your photos with us!</h4>
@@ -61,9 +63,9 @@ class ContentBox extends Component {
                                 <LoadingGalleryView />
                             )}
                         </div>
-                    )}
-                </div>
-            </section>
+                    </div>
+                )}
+        </section>
         )
     }
 }
