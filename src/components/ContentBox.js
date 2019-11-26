@@ -42,7 +42,7 @@ class ContentBox extends Component {
                             <div className='header'>
                                 <h4>Share your photos with us!</h4>
                                 <button className='add_photo_btn'>
-                                    <i class="fas fa-camera-retro"></i>
+                                    <i className="fas fa-camera-retro"></i>
                                     <span>Add Your Photo</span>
                                 </button>
                             </div>

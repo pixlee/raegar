@@ -7,7 +7,7 @@ class PhotoItem extends Component {
 
         return (
             <div className='photo_item'>
-                <img src={photo.url} />
+                <img src={photo.url} alt={photo.id} />
             </div>
         )
     }
