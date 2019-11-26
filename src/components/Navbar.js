@@ -8,7 +8,7 @@ class Navbar extends Component {
     handleNavigation(e, link) {
         e.preventDefault()
         this.props.dispatch(handleSetCurrentSection(link))
-        this.props.history.push(link);
+        this.props.history.push('/' + link);
     }
     getClassNames(section) {
         let { currentSection, album } = this.props

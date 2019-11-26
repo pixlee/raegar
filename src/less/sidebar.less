@@ -14,12 +14,26 @@
 
     .section_title {
         border-bottom: 1px solid @slate1;
-        padding: 15px 20px 18px;
+        display: flex;
+        align-items: center;
+        padding: 18px 20px 18px;
         text-align: center;
 
+        i {
+            color: @slate3;
+            cursor: pointer;
+            font-size: 24px;
+        }
+
         h5 {
-            font-size: 20px;
+            flex-grow: 1;
+            font-size: 18px;
             margin: 0;
+            text-transform: capitalize;
+        }
+
+        .icon {
+            width: 22px;
         }
     }
 
@@ -30,7 +44,7 @@
     .section {
         border-bottom: 1px solid @slate1;
         color: @slate3;
-        padding: 12px 25px 18px;
+        padding: 14px 25px 16px;
 
         &.name_of_display {
             margin: 3px 0 0;

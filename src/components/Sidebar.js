@@ -1,37 +1,27 @@
 
-import React, { Component } from 'react'
-import { connect } from 'react-redux'
-import DisplayInfoContent from './DisplayInfoContent'
-// import { Link } from 'react-router-dom'
+import React from 'react'
 
-class Sidebar extends Component {
-    render() {
-        let { currentSection } = this.props
-
-        return (
-            <section className='sidebar'>
-                <div className='section_title'>
-                    <h5>{ currentSection }</h5>
-                </div>
-                <div className='section_content'>
-                    { currentSection === 'Display Info' && (
-                        <DisplayInfoContent />
+export default function Sidebar(props) {
+    return (
+        <section className='sidebar'>
+            <div className='section_title'>
+                <div className='icon'>
+                    { props.showBackButton && (
+                        <i onClick={() => props.handleGoBack()} className="far fa-long-arrow-left"></i>
                     )}
                 </div>
-                <div className='section_controls disabled'>
-                    <button className='create_btn'>Create</button>
-                    <button className='reset_btn'>Reset</button>
-                    <button className='preview_btn'>Preview</button>
+                <h5>{ props.title }</h5>
+                <div className='icon'>
                 </div>
-            </section>
-        )
-    }
+            </div>
+            <div className='section_content'>
+                { props.children }
+            </div>
+            <div className='section_controls disabled'>
+                <button className='create_btn'>Create</button>
+                <button className='reset_btn'>Reset</button>
+                <button className='preview_btn'>Preview</button>
+            </div>
+        </section>
+    )
 }
-
-function mapStateToProps({ currentSection }) {
-    return {
-        currentSection
-    }
-}
-
-export default connect(mapStateToProps)(Sidebar)

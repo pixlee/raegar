@@ -4,6 +4,7 @@ import { connect } from 'react-redux'
 import Navbar from './Navbar'
 import Sidebar from './Sidebar'
 import ContentBox from './ContentBox'
+import DisplayInfoContent from './DisplayInfoContent'
 import { handleSetCurrentSection } from '../actions/shared'
 
 class DisplayInfo extends Component {
@@ -14,7 +15,9 @@ class DisplayInfo extends Component {
         return (
             <section className='display_info'>
                 <Navbar />
-                <Sidebar />
+                <Sidebar title='Display Info'>
+                    <DisplayInfoContent />
+                </Sidebar>
                 <ContentBox />
             </section>
         )

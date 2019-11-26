@@ -14,7 +14,10 @@ function App() {
             <div className="publish_lightbox">
                 <Route path='/' exact component={DisplayInfo} />
                 <Route path='/display-info' exact component={DisplayInfo} />
+
                 <Route path='/customize-widget' exact component={CustomizeWidget} />
+                <Route path='/customize-widget/layout-type' exact component={CustomizeWidget} />
+                
                 <Route path='/design-editor' exact component={DesignEditor} />
                 <Route path='/display-settings' exact component={DisplaySettings} />
                 <Route path='/advanced-options' exact component={AdvancedOptions} />
