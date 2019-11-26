@@ -1,6 +1,7 @@
 
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import PhotoItem from './PhotoItem'
 
 class ContentBox extends Component {
     render() {
@@ -37,17 +38,21 @@ class ContentBox extends Component {
                     )}
 
                     { photos && (
-                        <div className='widget'>
+                        <div className='widget photowall'>
                             <div className='header'>
                                 <h4>Share your photos with us!</h4>
-                                <button className='add_photo_btn'>Add Your Photo</button>
+                                <button className='add_photo_btn'>
+                                    <i class="fas fa-camera-retro"></i>
+                                    <span>Add Your Photo</span>
+                                </button>
                             </div>
-                            <div className='gallery'>
-                                <ul>
-                                    <li>Photo 1</li>
-                                    <li>Photo 2</li>
-                                </ul>
-                            </div>
+                            <ul className='gallery'>
+                                { photos.map((photo) => {
+                                    return <li key={photo.id}>
+                                        <PhotoItem photo={photo} />
+                                    </li>
+                                })}
+                            </ul>
                         </div>
                     )}
                 </div>
