@@ -1,40 +1,44 @@
 
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import { handleShowLightbox } from '../../actions/lightbox'
 import { Link } from 'react-router-dom'
 
 class ThemeEditor extends Component {
+    openLightbox() {
+        this.props.dispatch(handleShowLightbox())
+    }
     render() {
         return (
             <div className='design_editor_section theme_editor'>
-                <Link className='section' to='./default-theme/lightbox'>
+                <div className='section'>
                     <label>Global</label>
                     <i className="far fa-chevron-right"></i>
-                </Link>
-                <Link className='section' to='./default-theme/lightbox'>
+                </div>
+                <div className='section'>
                     <label>Header</label>
                     <i className="far fa-chevron-right"></i>
-                </Link>
-                <Link className='section' to='./default-theme/lightbox'>
+                </div>
+                <div className='section'>
                     <label>Widget</label>
                     <i className="far fa-chevron-right"></i>
-                </Link>
-                <Link className='section' to='./default-theme/lightbox'>
+                </div>
+                <Link to='/design-editor/default-theme/lightbox' className='section' onClick={(e) => this.openLightbox()}>
                     <label>Lightbox</label>
                     <i className="far fa-chevron-right"></i>
                 </Link>
-                <Link className='section' to='./default-theme/lightbox'>
+                <div className='section'>
                     <label>Uploader</label>
                     <i className="far fa-chevron-right"></i>
-                </Link>
-                <Link className='section' to='./default-theme/lightbox'>
+                </div>
+                <div className='section'>
                     <label>Localization</label>
                     <i className="far fa-chevron-right"></i>
-                </Link>
-                <Link className='section' to='./default-theme/lightbox'>
+                </div>
+                <div className='section'>
                     <label>Custom CSS</label>
                     <i className="far fa-chevron-right"></i>
-                </Link>
+                </div>
             </div>
         )
     }

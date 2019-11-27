@@ -7,6 +7,7 @@ import ContentBox from './ContentBox'
 import { handleSetCurrentSection } from '../actions/shared'
 import ThemePicker from './DesignEditor/ThemePicker'
 import ThemeEditor from './DesignEditor/ThemeEditor'
+import LightboxOptions from './DesignEditor/LightboxOptions'
 
 class DesignEditor extends Component {
     componentDidMount() {
@@ -38,6 +39,10 @@ class DesignEditor extends Component {
 
                     { (title.trim() === 'default theme' || title.trim() === 'black & white') && (
                         <ThemeEditor />
+                    )}
+
+                    { title.trim() === 'lightbox' && (
+                        <LightboxOptions />
                     )}
                 </Sidebar>
                 <ContentBox />

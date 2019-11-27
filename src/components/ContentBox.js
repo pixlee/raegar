@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import PhotoItem from './PhotoItem'
 import LoadingGalleryView from './LoadingGalleryView'
+import Lightbox from './Lightbox'
 import { handleChangePreviewDevice } from '../actions/widget'
 
 class ContentBox extends Component {
@@ -10,7 +11,7 @@ class ContentBox extends Component {
         this.props.dispatch(handleChangePreviewDevice(device))
     }
     render() {
-        let { loading, photos, album, layout, previewDevice, theme } = this.props
+        let { loading, photos, album, layout, previewDevice, theme, lightbox } = this.props
 
         if(!previewDevice) {
             previewDevice = 'web'
@@ -18,6 +19,12 @@ class ContentBox extends Component {
         
         return (
             <section className='content_box'>
+                { lightbox && (
+                    <Lightbox />
+                )}
+                
+                <Lightbox />
+
                 { !album && (
                     <div className='widget_holder'>
                         <div className='empty widget'>
@@ -89,7 +96,7 @@ class ContentBox extends Component {
     }
 }
 
-function mapStateToProps({ loading, album, filter, layout, previewDevice, theme }) {
+function mapStateToProps({ loading, album, filter, layout, previewDevice, theme, lightbox }) {
     let photos = album ? album.data : null
 
     if(album && photos) {
@@ -104,7 +111,8 @@ function mapStateToProps({ loading, album, filter, layout, previewDevice, theme 
         loading,
         layout,
         previewDevice,
-        theme
+        theme,
+        lightbox
     }
 }
 
