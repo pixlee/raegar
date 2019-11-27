@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux'
 import { currentSection, loading } from './shared'
-import { album, filter, layout, previewDevice } from './widget'
+import { album, filter, layout, previewDevice, theme } from './widget'
 
 export default combineReducers({
     loading,
@@ -8,5 +8,6 @@ export default combineReducers({
     album,
     filter,
     layout,
-    previewDevice
+    previewDevice,
+    theme
 })

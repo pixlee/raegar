@@ -1,0 +1,49 @@
+
+
+.design_editor_section {
+    h5 {
+        font-size: 16px;
+    }
+
+    .section {
+        display: flex;
+        padding: 16px 30px 14px;
+
+        > div {
+            display: flex;
+            align-items: center;
+            flex-grow: 1;
+        }
+
+        a {
+            color: @slate3;
+            font-family: sofia_medium;
+            font-size: 13px;
+            margin: 0 0 0 10px;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+
+        i.fa-circle {
+            cursor: pointer;
+            font-size: 18px;
+        }
+
+        label {
+            cursor: pointer;
+            margin: 0;
+        }
+    }
+
+    .section.active {
+        color: @blue;
+
+        a {
+            color: @blue;
+        }
+
+        i.fa-check-circle {
+            font-size: 18px;
+        }
+    }
+}

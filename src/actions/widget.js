@@ -3,6 +3,7 @@ export const GET_ALBUM = 'GET_ALBUM'
 export const FILTER_ALBUM = 'FILTER_ALBUM'
 export const CHANGE_DISPLAY_LAYOUT = 'CHANGE_DISPLAY_LAYOUT'
 export const CHANGE_PREVIEW_DEVICE = 'CHANGE_PREVIEW_DEVICE'
+export const APPLY_THEME = 'APPLY_THEME'
 
 function getAlbum(album) {
     return {
@@ -46,4 +47,15 @@ function changePreviewDevice(device) {
 
 export function handleChangePreviewDevice(device) {
     return changePreviewDevice(device)
+}
+
+function applyTheme(theme) {
+    return {
+        type: APPLY_THEME,
+        theme
+    }
+}
+
+export function handleApplyTheme(theme) {
+    return applyTheme(theme)
 }

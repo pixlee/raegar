@@ -1,7 +1,7 @@
 
 import { 
     GET_ALBUM, FILTER_ALBUM, 
-    CHANGE_DISPLAY_LAYOUT, CHANGE_PREVIEW_DEVICE
+    CHANGE_DISPLAY_LAYOUT, CHANGE_PREVIEW_DEVICE, APPLY_THEME
 } from '../actions/widget'
 
 import { getAlbum } from '../data/albums'
@@ -39,6 +39,15 @@ export function previewDevice(state = null, action) {
     switch(action.type) {
         case CHANGE_PREVIEW_DEVICE:
             return action.previewDevice
+        default:
+            return state;
+    }
+}
+
+export function theme(state = 'default-theme', action) {
+    switch(action.type) {
+        case APPLY_THEME:
+            return action.theme
         default:
             return state;
     }
