@@ -10,7 +10,7 @@ class ContentBox extends Component {
         this.props.dispatch(handleChangePreviewDevice(device))
     }
     render() {
-        let { loading, photos, album, layout, previewDevice } = this.props
+        let { loading, photos, album, layout, previewDevice, theme } = this.props
 
         if(!previewDevice) {
             previewDevice = 'web'
@@ -62,7 +62,7 @@ class ContentBox extends Component {
                             </div>
 
                             { !loading && photos && (
-                                <ul className={ layout + ' gallery' }>
+                                <ul className={ layout + ' gallery ' + theme }>
                                     { photos.map((photo) => {
                                         return <li key={photo.id}>
                                             <PhotoItem photo={photo} />
@@ -89,7 +89,7 @@ class ContentBox extends Component {
     }
 }
 
-function mapStateToProps({ loading, album, filter, layout, previewDevice }) {
+function mapStateToProps({ loading, album, filter, layout, previewDevice, theme }) {
     let photos = album ? album.data : null
 
     if(album && photos) {
@@ -103,7 +103,8 @@ function mapStateToProps({ loading, album, filter, layout, previewDevice }) {
         photos: photos,
         loading,
         layout,
-        previewDevice
+        previewDevice,
+        theme
     }
 }
 

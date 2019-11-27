@@ -20,6 +20,7 @@ function App() {
                 
                 <Route path='/design-editor' exact component={DesignEditor} />
                 <Route path='/design-editor/default-theme' exact component={DesignEditor} />
+                <Route path='/design-editor/black-&-white' exact component={DesignEditor} />
 
                 <Route path='/display-settings' exact component={DisplaySettings} />
                 <Route path='/advanced-options' exact component={AdvancedOptions} />

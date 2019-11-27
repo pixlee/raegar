@@ -45,7 +45,7 @@ class ThemePicker extends Component {
                     <div>
                         <i className={ this.isCurrentTheme('black-and-white') ? 'fas fa-check-circle' : 'far fa-circle' } 
                             onClick={(e) => this.applyTheme(e, 'black-and-white')}></i>
-                        <Link to='design-editor/default-theme' className='theme_name' onClick={(e) => this.applyTheme(e, 'black-and-white')}>
+                        <Link to='design-editor/black-&-white' className='theme_name' onClick={(e) => this.applyTheme(e, 'black-and-white')}>
                             Pixlee - Black & White
                         </Link>
                     </div>

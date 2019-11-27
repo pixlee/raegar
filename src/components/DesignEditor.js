@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import Navbar from './Navbar'
 import Sidebar from './Sidebar'
+import ContentBox from './ContentBox'
 import { handleSetCurrentSection } from '../actions/shared'
 import ThemePicker from './DesignEditor/ThemePicker'
 import ThemeEditor from './DesignEditor/ThemeEditor'
@@ -35,10 +36,11 @@ class DesignEditor extends Component {
                         <ThemePicker />
                     )}
 
-                    { title.trim() === 'default theme' && (
+                    { (title.trim() === 'default theme' || title.trim() === 'black & white') && (
                         <ThemeEditor />
                     )}
                 </Sidebar>
+                <ContentBox />
             </section>
         )
     }
