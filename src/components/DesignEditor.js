@@ -5,6 +5,7 @@ import Navbar from './Navbar'
 import Sidebar from './Sidebar'
 import { handleSetCurrentSection } from '../actions/shared'
 import ThemePicker from './DesignEditor/ThemePicker'
+import ThemeEditor from './DesignEditor/ThemeEditor'
 
 class DesignEditor extends Component {
     componentDidMount() {
@@ -25,12 +26,18 @@ class DesignEditor extends Component {
         })
 
         let showBackButton = title.trim() === 'design editor' ? false : true
-
+        
         return (
             <section className='display_info'>
                 <Navbar currentLink='design_editor' />
-                <Sidebar title={title.trim()} showBackButton={showBackButton} handleGoBack={() => this.goBack()}>
-                    <ThemePicker />
+                <Sidebar title={title.trim()} showBackButton={showBackButton} handleGoBack={() => this.goBack()}>                    
+                    { title.trim() === 'design editor' && (
+                        <ThemePicker />
+                    )}
+
+                    { title.trim() === 'default theme' && (
+                        <ThemeEditor />
+                    )}
                 </Sidebar>
             </section>
         )

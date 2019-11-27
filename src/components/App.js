@@ -19,6 +19,8 @@ function App() {
                 <Route path='/customize-widget/layout-type' exact component={CustomizeWidget} />
                 
                 <Route path='/design-editor' exact component={DesignEditor} />
+                <Route path='/design-editor/default-theme' exact component={DesignEditor} />
+
                 <Route path='/display-settings' exact component={DisplaySettings} />
                 <Route path='/advanced-options' exact component={AdvancedOptions} />
             </div>
