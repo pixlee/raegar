@@ -17,7 +17,7 @@ export default function Sidebar(props) {
             <div className='section_content'>
                 { props.children }
             </div>
-            <div className='section_controls disabled'>
+            <div className={props.disableControls ? 'section_controls disabled' : 'section_controls'}>
                 <button className='create_btn'>Create</button>
                 <button className='reset_btn'>Reset</button>
                 <button className='preview_btn'>Preview</button>

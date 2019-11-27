@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 class CustomizeContent extends Component {
     render() {
         return (
-            <section className='customize_widget_section main'>
+            <div className='customize_widget_section main'>
                 <Link to='customize-widget/layout-type' className='section'>
                     <div>
                         <label>Layout Type</label>
@@ -35,7 +35,7 @@ class CustomizeContent extends Component {
                     </div>
                     <i className="far fa-chevron-right"></i>
                 </div>
-            </section>
+            </div>
         )
     }
 }

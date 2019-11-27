@@ -12,10 +12,12 @@ class DisplayInfo extends Component {
         this.props.dispatch(handleSetCurrentSection('display-info'))
     }
     render() {
+        let disableControls = this.props.album ? false : true
+
         return (
             <section className='display_info'>
                 <Navbar />
-                <Sidebar title='Display Info'>
+                <Sidebar title='Display Info' disableControls={disableControls}>
                     <DisplayInfoContent />
                 </Sidebar>
                 <ContentBox />
@@ -24,9 +26,10 @@ class DisplayInfo extends Component {
     }
 }
 
-function mapStateToProps({ currentSection }) {
+function mapStateToProps({ album, currentSection }) {
     return {
-        currentSection
+        currentSection,
+        album,
     }
 }
 
