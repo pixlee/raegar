@@ -1,12 +1,17 @@
 
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import { handleHideLightbox } from '../actions/lightbox'
 
 class Lightbox extends Component {
+    hideLightbox() {
+        this.props.dispatch(handleHideLightbox())
+    }
     render() {
         return (
             <div className='lightbox_section'>
                 <div className='lightbox'>
+                    <i className="fal fa-times" onClick={() => this.hideLightbox()}></i>
                     <div className='photo'>
                         <img src='https://images.unsplash.com/photo-1554141220-83411835a60b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=900&q=60' alt='img' />
                         <div className='caption_box'></div>
@@ -21,10 +26,10 @@ class Lightbox extends Component {
                                 <div className='label_and_icons'> 
                                     <label>@iisbardan</label>                                  
                                     <div>
-                                        <i class="fab fa-twitter"></i>
-                                        <i class="fab fa-facebook-f"></i>
-                                        <i class="fab fa-whatsapp"></i>
-                                        <i class="fab fa-pinterest-p"></i>
+                                        <i className="fab fa-twitter"></i>
+                                        <i className="fab fa-facebook-f"></i>
+                                        <i className="fab fa-whatsapp"></i>
+                                        <i className="fab fa-pinterest-p"></i>
                                     </div>
                                 </div>
                             </div>

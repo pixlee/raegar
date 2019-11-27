@@ -5,6 +5,7 @@ import PhotoItem from './PhotoItem'
 import LoadingGalleryView from './LoadingGalleryView'
 import Lightbox from './Lightbox'
 import { handleChangePreviewDevice } from '../actions/widget'
+// import { handleShowLightbox } from '../actions/lightbox'
 
 class ContentBox extends Component {
     changePreviewDevice(e, device) {
@@ -20,10 +21,8 @@ class ContentBox extends Component {
         return (
             <section className='content_box'>
                 { lightbox && (
-                    <Lightbox />
+                    <Lightbox onHideLightBox={() => this.hideLightbox()} />
                 )}
-                
-                <Lightbox />
 
                 { !album && (
                     <div className='widget_holder'>
