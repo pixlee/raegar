@@ -1,6 +1,5 @@
 
-export function getAlbum(albumName) {
-    console.log(albumName === 'Food and Drinks')
+export function getAlbum(albumName) {    
     switch(albumName) {
         case 'Fashion & Clothes':
             return fashion_and_clothes
@@ -9,7 +8,7 @@ export function getAlbum(albumName) {
         case 'Food and Drinks':
             return {}
         default:
-            return fashion_and_clothes
+            return null
     }
 }
 

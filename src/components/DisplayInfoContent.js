@@ -4,7 +4,6 @@ import { connect } from 'react-redux'
 import { handleGetAlbum, handleFilterAlbum } from '../actions/widget'
 import { handleSetLoading } from '../actions/shared'
 import { handleChangeDisplayLayout } from '../actions/widget'
-import { getAlbum } from '../data/albums'
 
 class DisplayInfoContent extends Component {
     state = {
@@ -49,7 +48,7 @@ class DisplayInfoContent extends Component {
         const { dispatch, layout } = this.props
 
         dispatch(handleSetLoading(true))
-        dispatch(handleGetAlbum(getAlbum(albumName)))
+        dispatch(handleGetAlbum(albumName))
 
         // if layout is not specified, set it to default which is photowall
         if(!layout) {            

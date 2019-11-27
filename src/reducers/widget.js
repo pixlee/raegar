@@ -1,12 +1,12 @@
 
 import { GET_ALBUM, FILTER_ALBUM, CHANGE_DISPLAY_LAYOUT } from '../actions/widget'
+import { getAlbum } from '../data/albums'
 
 export function album(state = null, action) {
     switch(action.type) {
         case GET_ALBUM:
             return {
-                ...state,
-                ...action.album
+                ...getAlbum(action.album)
             }
         default:
             return state;
