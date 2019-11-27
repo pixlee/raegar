@@ -59,7 +59,7 @@
         .layout_grid {
             display: flex;
             flex-wrap: wrap;
-            margin-top: 25px;
+            margin-top: 18px;
 
             img {
                 height: 30px;
@@ -71,17 +71,19 @@
                 border: 1px solid @slate1a;
                 border-radius: 5px;
                 cursor: pointer;
-                margin-right: 14px;
-                min-width: 100px;
-                padding: 18px 12px 15px;
+                margin-right: 20px;
+                margin-top: 6px;
+                padding: 18px 0 15px;
                 text-align: center;
+                width: 106px;
 
                 &:hover,
                 &.active {
                     border: 1px solid @blue;
                 }
 
-                &:nth-child(3n+3) {
+                &:nth-child(3n+3),
+                &:last-child {
                     margin-right: 0;
                 }
 

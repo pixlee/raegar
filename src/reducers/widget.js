@@ -1,5 +1,9 @@
 
-import { GET_ALBUM, FILTER_ALBUM, CHANGE_DISPLAY_LAYOUT } from '../actions/widget'
+import { 
+    GET_ALBUM, FILTER_ALBUM, 
+    CHANGE_DISPLAY_LAYOUT, CHANGE_PREVIEW_DEVICE
+} from '../actions/widget'
+
 import { getAlbum } from '../data/albums'
 
 export function album(state = null, action) {
@@ -26,6 +30,15 @@ export function layout(state = null, action) {
     switch(action.type) {
         case CHANGE_DISPLAY_LAYOUT:
             return action.layout
+        default:
+            return state;
+    }
+}
+
+export function previewDevice(state = null, action) {
+    switch(action.type) {
+        case CHANGE_PREVIEW_DEVICE:
+            return action.previewDevice
         default:
             return state;
     }

@@ -2,6 +2,7 @@
 export const GET_ALBUM = 'GET_ALBUM'
 export const FILTER_ALBUM = 'FILTER_ALBUM'
 export const CHANGE_DISPLAY_LAYOUT = 'CHANGE_DISPLAY_LAYOUT'
+export const CHANGE_PREVIEW_DEVICE = 'CHANGE_PREVIEW_DEVICE'
 
 function getAlbum(album) {
     return {
@@ -34,4 +35,15 @@ function changeDisplayLayout(layout) {
 
 export function handleChangeDisplayLayout(layout) {
     return changeDisplayLayout(layout)
+}
+
+function changePreviewDevice(device) {
+    return {
+        type: CHANGE_PREVIEW_DEVICE,
+        previewDevice: device
+    }
+}
+
+export function handleChangePreviewDevice(device) {
+    return changePreviewDevice(device)
 }

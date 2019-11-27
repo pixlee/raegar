@@ -52,7 +52,7 @@ class DisplayInfoContent extends Component {
 
         // if layout is not specified, set it to default which is photowall
         if(!layout) {            
-            dispatch(handleChangeDisplayLayout('mosaic'))
+            dispatch(handleChangeDisplayLayout('photowall'))
         }
 
         // fake a delay for "API" call

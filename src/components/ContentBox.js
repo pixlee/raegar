@@ -3,10 +3,18 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import PhotoItem from './PhotoItem'
 import LoadingGalleryView from './LoadingGalleryView'
+import { handleChangePreviewDevice } from '../actions/widget'
 
 class ContentBox extends Component {
+    changePreviewDevice(e, device) {
+        this.props.dispatch(handleChangePreviewDevice(device))
+    }
     render() {
-        const { loading, photos, album, layout } = this.props
+        let { loading, photos, album, layout, previewDevice } = this.props
+
+        if(!previewDevice) {
+            previewDevice = 'web'
+        }
         
         return (
             <section className='content_box'>
@@ -28,22 +36,25 @@ class ContentBox extends Component {
                         <div className='device_switcher'>
                             <div className='box'>
                                 <ul>
-                                    <li className='active'>
+                                    <li className={ previewDevice === 'web' ? 'active' : ''} 
+                                        onClick={(e) => this.changePreviewDevice(e, 'web')}>
                                         <i className="far fa-laptop"></i>
                                         <span>Web</span>
                                     </li>
-                                    <li>
+                                    <li className={ previewDevice === 'tablet' ? 'active' : ''}
+                                        onClick={(e) => this.changePreviewDevice(e, 'tablet')}>
                                         <i className="far fa-tablet"></i>
                                         <span>Tablet</span>
                                     </li>
-                                    <li>
+                                    <li className={ previewDevice === 'mobile' ? 'active' : ''}
+                                        onClick={(e) => this.changePreviewDevice(e, 'mobile')}>
                                         <i className="far fa-mobile"></i>
                                         <span>Mobile</span>
                                     </li>
                                 </ul>
                             </div>
                         </div>
-                        <div className='widget'>
+                        <div className={ previewDevice + ' widget'}>
                             <div className='header'>
                                 <h4>Share your photos with us!</h4>
                                 <button className='add_photo_btn'>
@@ -80,7 +91,7 @@ class ContentBox extends Component {
     }
 }
 
-function mapStateToProps({ loading, album, filter, layout }) {
+function mapStateToProps({ loading, album, filter, layout, previewDevice }) {
     let photos = album ? album.data : null
 
     if(album && photos) {
@@ -93,7 +104,8 @@ function mapStateToProps({ loading, album, filter, layout }) {
         album,
         photos: photos,
         loading,
-        layout
+        layout,
+        previewDevice
     }
 }
 

@@ -11,17 +11,13 @@
     }
 
     .device_switcher {
-        padding: 0 0 20px 500px;
+        padding: 0 0 20px 545px;
         position: fixed;
         bottom: 0;
         left: 0;
         z-index: 1000;
         text-align: center;
         width: 100%;
-
-        .box {
-
-        }
 
         ul {
             background: white;
@@ -74,6 +70,10 @@
                 padding: 30px;
             }
 
+            h4 {
+                color: @slate2;
+            }
+
             .gallery {
                 border: 1px solid @slate1;
                 display: flex;
@@ -92,9 +92,120 @@
         &.photowall {
             color: @slate7;
         }
+
+        &.mobile {
+            border-radius: 14px;
+            border: 10px solid black;
+            height: 60vh;
+            margin-top: 15vh;
+            max-width: 280px;
+            overflow-y: scroll;
+            padding: 0 12px;
+
+            .header {
+                margin-top: 20px;
+                z-index: 2;
+
+                h4 {
+                    font-size: 18px;
+                }
+            }     
+
+            .pinboard.gallery {
+                column-count: 2;
+                column-gap: 10px;
+                margin-bottom: 80px;
+                z-index: 2;
+
+                li {
+                    margin-bottom: 8px;
+                }
+                
+                li:nth-child(1),
+                li:nth-child(11),
+                li:nth-child(8),
+                li:nth-child(17),
+                li:nth-child(4) {
+                    padding-top: 160px;
+                }
+
+                li:nth-child(16) {
+                    padding-top: 200px;
+                }  
+            }
+
+            .photowall.gallery {
+                li {
+                    margin-bottom: 2px;
+                    padding-top: 48%;
+                    width: 48%;
+                }
+
+                li:last-child {
+                    display: block;
+                }
+            }
+        }
+
+        &.tablet {
+            border-radius: 24px;
+            border: 12px solid black;
+            height: 80vh;
+            margin-top: 26px;
+            max-width: 500px;
+            overflow-y: scroll;
+            padding: 0 15px;
+
+            .header {
+                margin-top: 20px;
+                z-index: 2;
+            }
+
+            .gallery {
+                li {
+                    margin-bottom: 10px;
+
+                    img {
+                        border-radius: 5px;
+                    }
+                }
+            }
+
+            .pinboard.gallery {
+                column-count: 3;
+                column-gap: 10px;
+                margin-bottom: 80px;
+                z-index: 2;
+
+                li:nth-child(1),
+                li:nth-child(11),
+                li:nth-child(8),
+                li:nth-child(17),
+                li:nth-child(4) {
+                    padding-top: 180px;
+                }
+
+                li:nth-child(16) {
+                    padding-top: 220px;
+                }
+            }
+
+            .photowall.gallery {
+                li {
+                    padding-top: 31.33%;
+                    width: 31.33%;
+                }
+
+                li:last-child {
+                    display: block;
+                }
+            }
+        }
     }
 
     .header {
+        color: black;
+
         i {
             font-size: 14px;
             margin-right: 8px;
@@ -102,7 +213,7 @@
 
         .add_photo_btn {
             border: none;
-            color: @slate3;
+            color: black;
             font-size: 12px;
             margin-top: 10px;
         }
@@ -130,6 +241,12 @@
                 width: 100%;
                 object-fit: cover;
             }
+        }
+
+        &.loading li {
+            margin-bottom: 0 !important;
+            padding-top: 100%;
+            width: 100%;
         }
     }
 
