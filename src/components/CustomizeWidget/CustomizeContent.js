@@ -10,7 +10,7 @@ class CustomizeContent extends Component {
                 <Link to='customize-widget/layout-type' className='section'>
                     <div>
                         <label>Layout Type</label>
-                        <label className='value'>Photowall</label>
+                        <label className='value'>{ this.props.layout }</label>
                     </div>
                     <i className="far fa-chevron-right"></i>
                 </Link>
@@ -40,8 +40,9 @@ class CustomizeContent extends Component {
     }
 }
 
-function mapStateToProps({ currentSection }) {
+function mapStateToProps({ layout, currentSection }) {
     return {
+        layout,
         currentSection
     }
 }

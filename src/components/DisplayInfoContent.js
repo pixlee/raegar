@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { handleGetAlbum, handleFilterAlbum } from '../actions/widget'
 import { handleSetLoading } from '../actions/shared'
+import { handleChangeDisplayLayout } from '../actions/widget'
 import { getAlbum } from '../data/albums'
 
 class DisplayInfoContent extends Component {
@@ -45,10 +46,15 @@ class DisplayInfoContent extends Component {
     loadAlbum(e, albumName) {
         e.preventDefault()
 
-        const { dispatch } = this.props
+        const { dispatch, layout } = this.props
 
         dispatch(handleSetLoading(true))
         dispatch(handleGetAlbum(getAlbum(albumName)))
+
+        // if layout is not specified, set it to default which is photowall
+        if(!layout) {            
+            dispatch(handleChangeDisplayLayout('mosaic'))
+        }
 
         // fake a delay for "API" call
         setTimeout(() => {
@@ -122,11 +128,12 @@ class DisplayInfoContent extends Component {
     }
 }
 
-function mapStateToProps({ currentSection, album, filter }) {
+function mapStateToProps({ currentSection, album, filter, layout }) {
     return {
         currentSection,
         albumSelected: album ? album.name : null,
-        filterSelected: filter
+        filterSelected: filter,
+        layout
     }
 }
 

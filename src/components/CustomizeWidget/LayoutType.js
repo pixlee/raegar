@@ -1,8 +1,22 @@
 
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import { handleChangeDisplayLayout } from '../../actions/widget'
+import { handleSetLoading } from '../../actions/shared'
 
 class LayoutType extends Component {
+    changeLayout(e, layout) {
+        this.props.dispatch(handleSetLoading(true))
+        this.props.dispatch(handleChangeDisplayLayout(layout))
+
+        // fake a delay for "API" call
+        setTimeout(() => {
+            this.props.dispatch(handleSetLoading(false))
+        }, 1000)
+    }
+    getClassName(layoutType) {
+        return this.props.layout === layoutType ? 'active' : ''
+    }
     render() {
         return (
             <section className='customize_widget_section layout_type'>
@@ -11,15 +25,15 @@ class LayoutType extends Component {
                     <span className='secondary_title'>Best used for Shoppable Instagram, Inspiration Galleries, Contests.</span>
 
                     <ul className='layout_grid'>
-                        <li>
+                        <li onClick={(e) => this.changeLayout(e, 'photowall')} className={this.getClassName('photowall')}>
                             <img src='https://assets.pixlee.com/assets/embed/glyph/publishing_widget_photowall-2a7b48cfceaca48c7776cb9efa2fafb9458f2f777d6f35ece5aa477ec74810be.svg' alt='photowall icon' />
                             <label>PHOTOWALL</label>
                         </li>
-                        <li>
+                        <li onClick={(e) => this.changeLayout(e, 'mosaic')} className={this.getClassName('mosaic')}>
                             <img src='https://assets.pixlee.com/assets/embed/glyph/publishing_widget_mosaic-b80a575341cdafab545b5de7fb2d8588360a41aa7d7adbdeffba3d79a9ae73b8.svg' alt='photowall icon' />
                             <label>MOSAIC</label>
                         </li>
-                        <li>
+                        <li onClick={(e) => this.changeLayout(e, 'pinboard')} className={this.getClassName('pinboard')}>
                             <img src='https://assets.pixlee.com/assets/embed/glyph/publishing_widget_mosaic-b80a575341cdafab545b5de7fb2d8588360a41aa7d7adbdeffba3d79a9ae73b8.svg' alt='photowall icon' />
                             <label>PINBOARD</label>
                         </li>
@@ -57,9 +71,9 @@ class LayoutType extends Component {
     }
 }
 
-function mapStateToProps({ currentSection }) {
+function mapStateToProps({ layout }) {
     return {
-        currentSection
+        layout
     }
 }
 

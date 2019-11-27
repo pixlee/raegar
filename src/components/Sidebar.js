@@ -7,7 +7,7 @@ export default function Sidebar(props) {
             <div className='section_title'>
                 <div className='icon'>
                     { props.showBackButton && (
-                        <i onClick={() => props.handleGoBack()} className="far fa-long-arrow-left"></i>
+                        <i onClick={() => props.handleGoBack()} className="far fa-arrow-left"></i>
                     )}
                 </div>
                 <h5>{ props.title }</h5>

@@ -7,7 +7,7 @@ export function getAlbum(albumName) {
         case 'Travel Life':
             return travel_life
         case 'Food and Drinks':
-            return food_and_drinks
+            return {}
         default:
             return fashion_and_clothes
     }
@@ -178,5 +178,3 @@ let fashion_and_clothes = {
   "status": 200,
   "sortType": "approved_time"
 }
-
-let food_and_drinks = {}

@@ -6,9 +6,8 @@ import LoadingGalleryView from './LoadingGalleryView'
 
 class ContentBox extends Component {
     render() {
-        const { loading, photos, album } = this.props
-        console.log(this.props)
-
+        const { loading, photos, album, layout } = this.props
+        
         return (
             <section className='content_box'>
                 { !album && (
@@ -44,7 +43,7 @@ class ContentBox extends Component {
                                 </ul>
                             </div>
                         </div>
-                        <div className='widget photowall'>
+                        <div className='widget'>
                             <div className='header'>
                                 <h4>Share your photos with us!</h4>
                                 <button className='add_photo_btn'>
@@ -54,7 +53,7 @@ class ContentBox extends Component {
                             </div>
 
                             { !loading && photos && (
-                                <ul className='gallery photowall'>
+                                <ul className={ layout + ' gallery' }>
                                     { photos.map((photo) => {
                                         return <li key={photo.id}>
                                             <PhotoItem photo={photo} />
@@ -81,7 +80,7 @@ class ContentBox extends Component {
     }
 }
 
-function mapStateToProps({ loading, album, filter }) {
+function mapStateToProps({ loading, album, filter, layout }) {
     let photos = album ? album.data : null
 
     if(album && photos) {
@@ -93,7 +92,8 @@ function mapStateToProps({ loading, album, filter }) {
     return {
         album,
         photos: photos,
-        loading
+        loading,
+        layout
     }
 }
 

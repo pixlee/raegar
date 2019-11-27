@@ -1,5 +1,5 @@
 
-import { GET_ALBUM, FILTER_ALBUM } from '../actions/widget'
+import { GET_ALBUM, FILTER_ALBUM, CHANGE_DISPLAY_LAYOUT } from '../actions/widget'
 
 export function album(state = null, action) {
     switch(action.type) {
@@ -17,6 +17,15 @@ export function filter(state = null, action) {
     switch(action.type) {
         case FILTER_ALBUM:
             return action.filter
+        default:
+            return state;
+    }
+}
+
+export function layout(state = null, action) {
+    switch(action.type) {
+        case CHANGE_DISPLAY_LAYOUT:
+            return action.layout
         default:
             return state;
     }
