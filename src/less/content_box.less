@@ -64,23 +64,26 @@
         max-width: 800px;
 
         &.empty {
-            .header {
-                border: 1px solid @slate1;
-                margin: 15px 0 40px;
-                padding: 30px;
+            color: @slate2;
+
+            i {
+                font-size: 40px;
+                margin-bottom: 20px;
             }
 
             h4 {
-                color: @slate2;
+                max-width: 300px;
             }
 
             .gallery {
                 border: 1px solid @slate1;
+                border-radius: 3px;
                 display: flex;
                 align-items: center;
                 justify-content: center;
                 flex-grow: 1;
-                margin-bottom: 10px;
+                flex-direction: column;
+                margin: 25px 0 10px;
             }
         }
 

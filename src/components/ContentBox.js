@@ -21,11 +21,9 @@ class ContentBox extends Component {
                 { !album && (
                     <div className='widget_holder'>
                         <div className='empty widget'>
-                            <div className='header'>
-                                <h4>Header goes here</h4>
-                            </div>
                             <div className='gallery'>
-                                <h4>Photos goes here</h4>
+                                <i className="fal fa-photo-video"></i>
+                                <h4>Select an album to see what your Widget is going to look like</h4>
                             </div>
                         </div>
                     </div>
