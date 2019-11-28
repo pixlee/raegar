@@ -1,6 +1,7 @@
 
 export const SHOW_LIGHTBOX = 'SHOW_LIGHTBOX'
 export const HIDE_LIGHTBOX = 'HIDE_LIGHTBOX'
+export const UPDATE_LIGHTBOX = 'UPDATE_LIGHTBOX'
 
 function showLightbox(lightbox) {
     return {
@@ -21,6 +22,16 @@ function hideLightbox(lightbox) {
 }
 
 export function handleHideLightbox(lightbox) {
-    console.log('hehe')
     return hideLightbox(lightbox)
+}
+
+function updateLightbox(lightbox) {
+    return {
+        type: UPDATE_LIGHTBOX,
+        lightbox
+    }
+}
+
+export function handleUpdateLightbox(lightbox) {
+    return updateLightbox(lightbox)
 }

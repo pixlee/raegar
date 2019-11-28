@@ -21,7 +21,11 @@ class ContentBox extends Component {
         return (
             <section className='content_box'>
                 { lightbox && (
-                    <Lightbox onHideLightBox={() => this.hideLightbox()} />
+                    <div>
+                        { lightbox.display && (
+                            <Lightbox onHideLightBox={() => this.hideLightbox()} />
+                        )}
+                    </div>
                 )}
 
                 { !album && (
